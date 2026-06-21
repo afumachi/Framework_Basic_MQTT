@@ -111,7 +111,7 @@ void setup() {
 
   // Inicia Wi-Fi
   // Cadastre quantas redes Wi-Fi necessárias (para Fallback) (SSID, Senha)
-  wifiMulti.addAP("MJCA_FUNDOS", "21092429MJC@");
+  wifiMulti.addAP("SSID_1", "Senha_2");
   wifiMulti.addAP("SSID_2", "Senha_2");
   wifiMulti.addAP("SSID_3", "Senha_3");
   wifiMulti.addAP("SSID_4", "Senha_4");
