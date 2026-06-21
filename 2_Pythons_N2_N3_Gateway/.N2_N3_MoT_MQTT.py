@@ -141,8 +141,11 @@ try:
             Pacote_UL_status.clear()
             result = client.publish(TOPIC_DL, bytes(Pacote_DL))
             result.wait_for_publish()
-            print(f"Pacote [DL] {j:03d} publicado no broker | LED={Comando_LED_amarelo}")
+            print(f"Pacote [DL] {j:03d} publicado no broker | LED AMARELO = {Comando_LED_amarelo}")
 
+            # Aguarda antes do próximo ciclo de pacotes DL-UL
+            time.sleep(Tempo_entre_pacotes)
+            
             # -------- Aguarda novo pacote UL (timeout = Tempo_entre_pacotes) --------
             Pacote_UL_novo = Pacote_UL_status.wait(timeout=Tempo_entre_pacotes)
 
@@ -185,8 +188,6 @@ try:
                 if Grava_log == 1:
                     print(f"{time.asctime()};{j};;", file=Log_dados)
 
-            # Aguarda antes do próximo ciclo de pacotes DL-UL
-            time.sleep(Tempo_entre_pacotes)
 
         # ===== Resumo do Teste =====
         PSR = (1.00 - (perda_pacote / medidas)) * 100
