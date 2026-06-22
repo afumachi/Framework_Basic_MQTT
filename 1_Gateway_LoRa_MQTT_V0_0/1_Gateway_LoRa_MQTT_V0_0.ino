@@ -136,7 +136,7 @@ void setup() {
 
   mqttClient.setServer(MQTT_BROKER, MQTT_PORT);
   mqttClient.setCallback(mqtt_callback);
-  mqttClient.setBufferSize(256);   // garante buffer para 20 bytes + overhead
+  mqttClient.setBufferSize(256);   // pode ser reduzido para 128 - buffer para 20 bytes + overhead
   conectar_mqtt();
 
   // Inicia módulo LoRa RFM95
